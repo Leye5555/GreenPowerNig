@@ -1,0 +1,1199 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+}
+
+html{
+    width: 100%;
+    height:100%;
+}
+
+body{ 
+    width: 100%;
+    height: 100%;
+    /* font-size: calc(16px + 6 * ((100vw-200px)/(1000px)));  */
+    font-size: min(max(4vw,16px), 22px);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/images/blue-2889381_1920.jpg);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+}
+
+header{
+    width: 100%;
+    height: 13%;
+    position: fixed;
+    right: 16px;
+    top:0px;
+    z-index: 1;
+
+}
+
+
+.navContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(90, 119, 30, 0.2);
+    width: 100%;
+    height: 100%;
+    color: gray;
+    word-spacing: none;
+    overflow: hidden;
+    text-transform: uppercase;
+
+}
+
+.container .item {
+    width: 50%;
+    height: 100%;
+    padding-top: 25px;
+    margin: 0px 10px;
+    
+
+}
+nav .item:nth-child(1) {
+    margin: 30px 30vw 10px 5vw;
+    padding: 10px;
+}
+
+nav .item:nth-child(1) a {
+    height: 100%;
+}
+
+
+nav .item:nth-child(3) {
+    width:max-content;
+    padding-right: 30px;
+}
+nav .item:nth-child(4) {
+    
+    padding-right: 20px;
+}
+
+nav .item:nth-child(5) {
+    width: 10%;
+    padding-left: 10px;
+    margin-right: 50px;
+    margin-left: 0px;
+}
+
+
+nav div a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+nav:nth-child(1) a img {
+    width:170px;
+    height: 50px;
+}
+
+.navBar {
+    width: 7%;
+    height: 50px;
+    margin-top: 15px;
+    padding-top: 9px;
+    width: max(calc(2vw + 10%), 34px);
+    cursor: pointer;
+}
+
+.bars {
+    background-color: black;
+    width: max(calc(2vw + 10%), 34px);
+    height: 5px;
+    margin: 5px;
+    transform: rotate(0deg) translate(0px, 0px);
+    visibility: visible;
+    transition: all 0.5s;
+}
+.bars:nth-child(3) {
+    background-color: black;
+    width: max(calc(2vw + 10%), 34px);
+    height: 5px;
+    margin: 5px;
+    /* transform: rotate(0deg) translate(0px, 0px); */
+    transition: all 0.5s ease 0.1s;
+}
+
+
+
+/* these are the styles for the hover menu */
+
+nav:nth-child(1) div:nth-child(2) div {
+    position: absolute;
+    left: 685px;
+    top: 58px;
+    width: 150px;
+    display: none;
+
+}
+
+nav:nth-child(1) div:nth-child(3) div {
+    position: absolute;
+    left: 880px;
+    top: 58px;
+    width: 150px;
+    display: none;
+    
+}
+
+nav:nth-child(1) div:nth-child(4) div {
+    position: absolute;
+    left: 1048px;
+    top: 58px;
+    width: 150px;
+    display : none;
+
+}
+
+
+
+
+/* the hover styles */
+
+nav:nth-child(1) div:nth-child(2):hover a,
+nav:nth-child(1) div:nth-child(3):hover a,
+nav:nth-child(1) div:nth-child(4):hover a{
+    box-shadow: 2px 2px 5px rgb(21, 175, 21);
+}
+
+ 
+
+
+
+nav:nth-child(1) div:nth-child(2):hover  > div,
+nav:nth-child(1) div:nth-child(3):hover  > div,
+nav:nth-child(1) div:nth-child(4):hover  > div {
+   display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border: 1px solid black;
+   transition: all 0.5s;
+   background: rgba(0, 0, 0, 0.63);
+   color: green;
+   
+} 
+
+
+
+
+
+
+/*  these are the styles for the navBar slide-in menu */
+
+
+.bar3toggle {
+    visibility: hidden;
+    transition: alls 0.1s ease;
+    
+}
+.bar1toggle {
+    transform: rotate(45deg) translate(0px, 17px);
+    height: 2px;
+    transition: all 1s 0.1s;
+}
+
+.bar2toggle {
+    transform: translate(-11px, 5px) rotate(135deg);
+    height: 2px;
+    transition: all 1s ease 0.1s;
+    
+}
+
+
+
+header .navSlide {
+    width: 350px;
+    height: 570px;
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    right: -100%;
+    background-color: white;
+    align-items: center;
+   transition: all 2s;
+   z-index: 2;
+
+    
+}
+
+
+/* //////////////////////  styles for the slide menu /////////////////////// */
+header nav:nth-child(2) div{
+    display: block;
+    flex-basis: 50% 50%;
+    margin: 10px;
+    text-align: center;
+    line-height: 30px;
+    
+
+}
+
+
+
+
+
+
+
+/*//////////////////////////// day and night mode toggle //////////////////////*/
+  .navSlide .modeWrap {
+      width: 80px;
+      height: 30px;
+      background-color: white;
+      overflow: hidden;
+      border-radius: 20%;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      border: 2px solid green;
+      overflow: hidden;
+  }
+
+  .modeWrap::before{
+      content: "";
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      position: absolute;
+      left: -5px;
+      overflow: hidden;
+      border-radius: 50%;
+  }
+
+  
+  .modeWrap::after{
+    content: "";
+    width: 27px;
+    height: 30px;
+    background-color: whitesmoke;
+    position: absolute;
+    right: -1px;
+    top:-2px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid gray;
+}
+
+  .modeWrap .modeDay {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    background-color: gray;
+    left: 50px;
+    clip-path: polygon(50% 0%, 66% 26%, 100% 35%, 75% 58%, 80% 100%, 50% 79%, 19% 100%, 23% 57%, 0% 35%, 34% 27%);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  
+  .modeWrap .modeNight {
+    background-color: white;
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 3px;
+    clip-path: polygon(48% 0, 34% 23%, 27% 48%, 29% 68%, 43% 85%, 61% 98%, 25% 91%, 0% 70%, 0% 35%, 20% 10%);
+    border: 1px solid green;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+
+/*//////////////////////////// day and night mode toggle //////////////////////*/
+
+
+
+
+
+
+
+
+header nav:nth-child(2) .menu1 a {
+    font-weight: lighter;
+}
+
+header nav:nth-child(2) div.login {
+       display: inline-block;
+       width: 56px;
+       margin-right: 50px;
+       font-weight: lighter;
+}
+
+
+header nav:nth-child(2) div.signUp {
+    display: inline-block;
+    width: 80px;
+    word-wrap: none;
+    font-weight: lighter;
+
+}
+
+header nav:nth-child(2) div.searchWrapper:after {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f00e";
+    position: absolute;
+    color: green;
+    top: 93px;
+    right: 75px;
+    
+}
+
+header nav:nth-child(2) div.searchWrapper input {
+    width: 230px;
+    height: 40px;
+    border: 1px solid green;
+    padding-left: 10px;
+    padding-right: 40px;
+    font-size: 18px;
+}
+
+
+header nav:nth-child(2) div.icons a {
+     color:  green;
+     margin: 10px;
+}
+
+header .navSlideToggle {
+    position: absolute;
+    right: 0px;
+    transition: all 0.8s;
+}
+
+
+
+
+/* end of drop down menu */
+
+main {
+    position: relative;
+    width: 100%;
+    height: 300vh;
+    background-color: transparent;
+}
+
+main section.first{
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 5%;  
+
+}
+.first h1 {
+    position: fixed;
+    top: 25%;
+    font-size: 2em;
+    font-weight: lighter;
+    width: 500px;
+}
+
+
+
+.first button {
+   position: fixed;
+   background-color: transparent;
+   border: 1px outset green;
+   width: 300px;
+   padding: 5px;
+   height: 70px;
+   font-size: medium;
+   font-weight: bolder;
+   box-shadow: 0px 2px 2px rgb(5, 26, 5);
+}
+
+#btn1 {
+    top: 65%;
+    left: 5%;
+    background-color: rgba(60, 80, 21, 0.2);
+}
+
+#btn2 {
+    top: 65%;
+    left: 60%;
+}
+
+section.second {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 150vh;
+    top: 29%;
+}
+
+.second h1 {
+    margin: 2%;
+    text-align: center;
+    color: green;
+    font-size: min(50px,8vh);
+}
+.services {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 80%;
+    margin: 10px 10%;
+    overflow: hidden;
+    justify-content: space-around;
+}
+
+.one {
+    width: 30%;
+    height: 550px;
+    border: 1px solid gray;
+    box-shadow: 2px 5px 10px gray;
+    overflow: hidden;
+    
+}
+
+.one h3 {
+    color: green;
+    padding: 5px;
+}
+
+
+.one img {
+    width:150%;
+    height: 300px;
+    padding-right: 100px;
+    
+}
+.one p {
+    padding: 0px 7px;
+}
+.one p button {
+    margin: 5px 20px;
+    width: 100px;
+    font-size: 0.7em;
+    height: 30px;
+    background-color: green;
+    border: white;
+}
+
+.c p button {
+    margin: 5px 10px;
+}
+
+.one p button a {
+    color: white;
+    text-decoration: none;
+    width: 100px;
+    height: 30px;
+    padding-left: 5px;
+    background-color: green;
+}
+
+.one p button a span {
+    width: 20px;
+    height: 30px;
+    background-color: black;
+    padding: 7px 11.85px 6px;
+    margin-left: 24px;
+}
+
+.one p button:hover{
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+    cursor: pointer;
+}
+
+.one p button:hover > a {
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+}
+.moreServices {
+    position: absolute;
+    left:40%;
+    margin: 70px 20px;
+    width: 210px;
+    font-size: 16px;
+    height: 60px;
+    background-color: green;
+    border: white;
+    padding:  7px 2px;
+    
+}
+
+.moreServices a {
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font-weight: lighter;
+    font-size: 1.5em;
+    padding-left: 3px;
+}
+
+.moreServices:hover{
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+    cursor: pointer;
+}
+
+.moreServices:hover > a {
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+}
+
+.moreServices a span {
+    width: 50px;
+    background-color: black;
+    margin-left: 7px;
+    height: 100%;
+    padding: 9px 18px 21px 18px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+section.third  {
+    position: absolute;
+    width: 100%;
+    height: 170vh;
+    background-color: white;
+    top:78%;
+    border-top: 10px solid  rgba(0, 0, 0, 0.2);
+    padding: 100px 150px;
+}
+
+.third h1 {
+    color: green;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: min(50px,8vh);
+}
+.third p {
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+.third .moreServices {
+    position: absolute;
+    left:40%;
+    top: 70%;
+    margin: 70px 20px;
+    width: 210px;
+    font-size: 16px;
+    height: 60px;
+    background-color: green;
+    border: white;
+    padding:  7px 2px;
+    
+}
+
+.third .moreServices:hover{
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.third div.slideShow {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    height: 40vh;
+    border: 2px solid green;
+    overflow:hidden;
+    background-color: green;
+    filter: grayscale(0.1) contrast(0.5);
+
+    
+}
+
+.slides {
+            position: absolute;
+            display: flex;
+            width: 9999px;
+            height: 100%;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            left : 0.5vw;
+            display: block;
+            animation: slide 15s infinite;
+        }
+
+        @keyframes slide {
+           0% { left:0.5vw;}
+           10%{left:-25.5vw;}
+           20%{left:-51vw;}
+           30% {left: -76.5vw;}
+           40% {left: -102vw;}
+           50% {left: -127.5vw;}
+           60% {left: -153vw;}
+           70% {left: -178.5vw;}
+           80% {left: -204vw}
+           90% {left : -229vw}
+           100% {left: -254.5vw}
+           100.1% {left: 0.5vw; display: none;}
+        }
+
+      .third   img {
+            width: 25vw;
+            height: 40vh;
+        }
+
+     .fourth {
+         position: absolute;
+         top: 130%;
+         width: 100%;
+         height: 130vh;
+         background-color: black;
+         padding: 100px 150px;
+
+     }
+
+     .fourth .portfolioContainer {
+         position: absolute;
+         background-color: white;
+         height: 100%;
+         border-top:10px solid green;
+         border-bottom:10px solid green;
+         top:0px;
+         width: 78%;
+         padding: 20px 130px;
+         
+        
+     }
+
+     .fourth h1 {
+         text-align: center;
+         color:  green;
+         margin-top: 120px;
+         margin-bottom: 0px;
+         font-size: 40px;
+     }
+     .portfolio p {
+         width: 800px;
+         height: 700px;
+         line-height: 40px;
+         padding: 60px 40px;
+         text-align: center;
+     }
+     
+     .lslideWrapper {
+        position: absolute;
+        left: 0px;
+        top:50px;
+        width: 12%;
+        height: 80%;
+        overflow: hidden;
+       
+    }
+     
+  
+     .lsideSlide {
+         position: absolute;
+         display: flex;
+         flex-flow : column nowrap;
+         align-items: center;
+         justify-content: space-between;
+         left: 0px;
+         top:0px;
+         width: 100%;
+         height: 135%;
+         animation: sideSlide 10s infinite;
+        
+     }
+
+
+
+     .rslideWrapper {
+        position: absolute;
+        right: 0px;
+        top:50px;
+        width: 11%;
+        height: 80%;
+        overflow: hidden;
+       
+    }
+
+     .rsideSlide {
+        position: absolute;
+        display: flex;
+        flex-flow : column nowrap;
+        align-items: center;
+        justify-content: space-between;
+        right: 0px;
+        top:0px;
+        width: 100%;
+        height: 135%; 
+    }
+
+
+
+    .imgWrapper {
+        box-shadow : 5px 5px 5px green;
+        margin: 65px 0px 0px 10px;
+        width: 60%;
+        height: 10%;
+    }
+
+    .lslideWrapper   .imgWrapper {
+        box-shadow : -5px -5px 5px green;
+        margin: 65px 0px 0px 10px;
+        width: 60%;
+        height: 10%;
+    }
+
+    
+    
+    .rsideSlide img {
+        width: 100%;
+        height: 100%;   
+    }
+    .lsideSlide img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+
+    section.fifth {
+        background-color: white;
+        width: 100%;
+        height: 180vh;
+        position: absolute;
+        top: 173%;
+        padding: 0px 130px 0px 160px;
+    }
+
+  
+
+    .fifth h1 {
+        margin-top: 100px;
+        text-align: center;
+        color: green;
+        height: 30px;
+        font-size: min(60px,9vh);
+        width: 100%;
+    }
+
+    .fifth .boxContainer {
+        position: absolute;
+        top: 20%;
+        width: 76.5%;
+        height: 110vh;
+        border : 10px groove green;
+        border-top: 1px dashed black;
+        background-image: url(../assets/images/team-3393037_1280.jpg);
+        background-size: 120% 85%;
+        perspective: 1600px;
+       
+    }
+
+     .box {
+        transform-style: preserve-3d;
+        position: absolute;
+        width: 21em;
+        height: 21.5em;
+        top:17.9%;
+        left: 27%;
+        
+    }
+    
+    .fifth .boxContainer:hover > .box {
+        transform-style: preserve-3d;
+        position: absolute;
+        width: 21em;
+        height: 21.5em;
+        top:17.9%;
+        left: 27%;
+        animation: picRotate 50s infinite linear;
+      
+        
+    }
+
+    @keyframes picRotate {
+        from {transform: rotateY(0deg);}
+         to {transform: rotateY(360deg);}
+    }
+
+
+    .box .front,
+    .box .back,
+    .box .lside,
+    .box .rside
+     {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        transform-style: preserve-3d;
+        border: 2px solid black;
+    }
+
+    .front {
+        transform : translateZ(10.5em);
+        
+    }
+    .rside {
+        transform: rotateY(90deg) translateZ(10.5em);
+    }
+    .lside {
+        transform: rotateY(-90deg) translateZ(10.5em);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(10.5em);
+    }
+
+
+
+    .imgHolder {
+         position: absolute;
+         overflow: hidden;
+         border: 1px solid black;
+         width: 50%;
+         height: 60%;
+         border-radius: 50%;
+         left: 25%;
+         top: 2%;
+         background-color: rgba(0, 128, 0,.5);
+    }
+    .subHolder {
+        width: 50%;
+        height: 80%;
+        position: absolute;
+        top:10%;
+        left: 26%;
+        overflow: hidden;
+        border: 5px solid rgb(185, 224, 185);
+        border-radius: 30%;
+    
+    }
+
+    .imgHolder img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    dl {
+        position: absolute;
+        width: 100%;
+        height: 35%;
+        background-color: rgba(0, 128, 0,.5);
+        top: 65%;
+        color: rgb(185, 224, 185);
+    }
+
+    dt{
+        position: absolute;
+        left:10%;
+        width: 80%;
+    }
+    dd {
+        position: absolute;
+        left:20%;
+        top: 20%;
+        width: 78%;
+    }
+
+   /*///////////////////////////// prev and next button important styles. Self created 😅  ////////////////////////*/
+    #prev {
+        position: absolute;
+        left: 31%;
+        top: 47%;
+        opacity: 0.6;
+        width: 50px;
+        height: 70px;
+        font-size: 3em;
+        cursor: pointer;
+        padding-bottom: 20px;
+        z-index: 0;
+        color: rgb(71, 69, 69);
+        background-color: rgba(255, 241, 241, 0.671);
+        border-radius: 50%;
+        background-size: 100px;
+    }
+
+    #helpPrev {
+        position: absolute;
+        left: 31%;
+        top: 47%;
+        opacity: 0;
+        width: 50px;
+        height: 70px;
+        font-size: 3em;
+        cursor: pointer;
+        padding-bottom: 20px;
+        z-index: 1;
+        color: rgb(71, 69, 69);
+        background-color: rgba(255, 241, 241, 0.671);
+        border-radius: 50%;
+        background-size: 100px;
+    }
+
+    #helpPrev:hover ~ #next {
+        opacity: 0;
+    }
+    
+    #next {
+        position: absolute;
+        right: 32%;
+        top: 47%;
+        opacity: 0.6;
+        width: 50px;
+        height: 70px;
+        font-size: 3em;
+        cursor: pointer;
+        z-index: 0;
+        color: rgb(71, 69, 69);
+        background-color: rgba(255, 241, 241, 0.671);
+        border-radius: 50%;
+        background-size: 100px;
+    }
+   #next:hover  ~ #prev {
+      opacity: 0;
+   }
+
+   #prev:hover  ~ #next {
+    opacity: 0;
+
+ }
+    .boxContainer:hover ~ #prev, 
+    .boxContainer:hover ~ #next {
+    opacity: 0.4;
+    background-color: rgba(255, 241, 241, 0.671);
+    border-radius: 50%;
+    background-size: 100px;
+    color: rgb(71, 69, 69);
+    font-size: 3em;
+    width: 50px;
+    height: 70px;
+    text-align: center;
+ }
+
+ #prev span {
+     font-weight: bolder; 
+     position: absolute;
+     left: 2px;
+     top:-12px; 
+ }
+    
+ #next span {
+    font-weight: bolder; 
+    position: absolute;
+    right: 4px;
+    top:-12px; 
+}
+/*///////////////////////////// end of prev and next button important styles. Self created 😅  ////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////// scroll up button styles ////////////////////////////// */
+
+
+.scrollUpBtn {
+    width: 65px;
+    height : 65px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    background-color: rgba(0, 128, 0,0.5);
+    
+    
+}
+
+
+.scrollUpBtn::after {
+    content: "";
+    background-image: url(../assets/images/green-2891841_1920.jpg);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: fixed;
+    right: 5.5%;
+    width: 50px;
+    height: 50px;
+}
+
+
+footer {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 699vh;
+    background-image: url(../assets/images/light-bulbs-3489395_640.jpg);
+    background-size: cover;
+
+}
+
+footer .footContainer {
+    width:100%;
+    height: 100%;
+     background-color: rgba(10, 9, 9, 0.877);
+     display: flex;
+     flex-flow: row nowrap;
+     align-items: center;
+}
+
+.footContainer > div {
+      width: 25vw;
+      height: 70vh;
+      padding: 20px;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+}
+
+.footContainer > div > div {
+    width: 100%;
+    height: 30vh;
+    color: green;
+    padding-left: 50px;
+
+}
+
+.footContainer img {
+    width: 17vw;
+    height: 20vh;
+}
+
+.footContainer > div:nth-child(1) > div:nth-child(2) {
+    padding-left: 46px;
+    height: 10vh;
+}
+
+.footContainer > div:nth-child(1) > div small {
+    font-size: 13px;
+}
+
+.footContainer > div:nth-child(1) > div small a {
+    color: green;
+    text-decoration: none;
+}
+
+.footContainer > div > div:nth-child(2) a {
+    color: green;
+    padding-right: 20px;
+}
+
+.footContainer > div:nth-child(2)  {
+    align-self: center;
+    text-transform: capitalize;
+    justify-content: flex-start;
+}
+
+.footContainer > div:nth-child(2)  div {
+   text-align: center;
+   height: 8vh;
+   padding-top: 3vh;
+  
+   
+
+}
+
+.footContainer > div:nth-child(2)  div:nth-child(1) {
+     font-size: 25px;
+     text-decoration: underline;
+     padding-top: 5vh;
+     margin-bottom: 15px;
+}
+
+
+
+.footContainer > div:nth-child(2) div a { 
+    color: green;
+    text-decoration: none;
+    text-transform: capitalize;
+    
+}
+
+
+
+
+
+
+.footContainer > div:nth-child(3)  div {
+    text-align: center;
+    height: 8vh;
+    padding-top: 3vh;
+   
+    
+ 
+ }
+ 
+ .footContainer > div:nth-child(3)  div:nth-child(1) {
+      font-size: 25px;
+      text-decoration: underline;
+      padding-top: 5vh;
+      margin-bottom: 15px;
+ }
+ 
+ 
+ 
+ .footContainer > div:nth-child(3) div a { 
+     color: green;
+     text-decoration: none;
+     text-transform: capitalize;
+     
+ }
+
+
+
+
+
+
+
+
+
+
+
+ .footContainer > div:nth-child(4)  div {
+    text-align: center;
+    height: 10vh;
+    padding-top: 3vh;
+   
+    
+ 
+ }
+ 
+ .footContainer > div:nth-child(4)  div:nth-child(1) {
+      font-size: 25px;
+      text-decoration: underline;
+      padding-top: 5vh;
+ }
+
+ .footContainer > div:nth-child(4)  div:nth-child(2) {
+     height: 70vh;
+ } 
+ 
+ 
+ 
+ .footContainer > div:nth-child(4) div a { 
+     color: green;
+     text-decoration: none;
+     text-transform: capitalize;
+     
+ }
+ 
+

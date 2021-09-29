@@ -1,0 +1,216 @@
+////////////////////// this is the script for the navSlide /////////////////////////////////////////
+let main = document.getElementById("main")
+let footer = document.querySelector("footer");
+let navBar = document.querySelector(".navBar");
+let navSlide = document.querySelector(".navSlide"); 
+navBar.addEventListener("click", () => {
+    navBar.children[0].classList.toggle("bar1toggle");
+    navBar.children[1].classList.toggle("bar2toggle");
+    navBar.children[2].classList.toggle("bar3toggle");
+    navSlide.classList.toggle("navSlideToggle"); 
+});
+main.addEventListener("click", click = () => {
+        navBar.children[2].classList.remove("bar3toggle");
+        navBar.children[0].classList.remove("bar1toggle");
+        navBar.children[1].classList.remove("bar2toggle");
+        navSlide.classList.remove("navSlideToggle");
+})
+
+footer.addEventListener("click", click = () => {
+    navBar.children[2].classList.remove("bar3toggle");
+    navBar.children[0].classList.remove("bar1toggle");
+    navBar.children[1].classList.remove("bar2toggle");
+    navSlide.classList.remove("navSlideToggle");
+})
+///////////////////////////////////// the end of the navSlide script //////////////////////////////// 
+
+
+
+
+
+
+//////////////////////////////// the codes for the scroll up navigation upon page scroll /////////////////////
+let header = document.getElementById("header");
+let logo = document.getElementById("logo");
+let container = document.querySelector(".container");
+let dropMenu = document.querySelectorAll(".drop");
+let scrollUpBtn = document.querySelector(".scrollUpBtn");
+container.addEventListener("scroll", () => {
+    if (container.scrollTop > 200) {
+        header.style.top = "-100%";
+        header.style.transition = "all 5s";
+        dropMenu.forEach((drop) => drop.style.backgroundColor = "white")
+    }
+    if (container.scrollTop < 150) {
+        header.style.top = "0px";
+        logo.style.width = "170px";
+        logo.style.height = "50px";
+        logo.style.paddingBottom = "0px";
+        header.style.height = "13%";
+        header.style.backgroundColor = "rgba(90, 119, 30, 0.2)"
+        header.style.transition = "all 1s";
+        dropMenu.forEach((drop) => drop.style.backgroundColor = "rgba(0, 0, 0, 0.63)")
+    }
+    if (container.scrollTop > 500) {
+        header.style.top = "0px";
+        header.style.height = "10%";
+        header.style.backgroundColor = "white";
+        header.style.transition = "all 1.5s";
+        logo.style.height = "55px";
+        logo.style.marginTop = "0px";
+        logo.style.paddingTop = "0px";
+        logo.style.paddingBottom = "15px";
+    }
+    if (container.scrollTop >= 1500) {
+        scrollUpBtn.removeAttribute("hidden");
+    }
+    if (container.scrollTop < 1500) {
+        scrollUpBtn.setAttribute("hidden","hidden");
+    }
+})
+
+scrollUpBtn.addEventListener("click", (e) => {
+    e = setInterval(() => {
+        container.scrollTop = container.scrollTop - 700;
+    }, 50);
+    setTimeout(() => {clearInterval(e);}, 400)  
+})
+
+//////////////////////////////// end of the codes for the scroll up navigation upon page scroll /////////////////////
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////// this is the block of code for page search /////////////////////////////////////////////////
+let search = document.getElementById("search");
+let searchWrapper = document.querySelector(".searchWrapper");
+let p = document.querySelectorAll("p");
+let div = document.querySelectorAll("div");
+let span = document.querySelectorAll("span");
+let h1 = document.querySelectorAll("h1");
+let h3 = document.querySelectorAll("h3");
+searchWrapper.addEventListener("click", (word) => {
+    word = search.value;
+    word = word.toLowerCase()
+    p.forEach((pElement) => {
+        let pElement2 = pElement.textContent.toLowerCase().toString();
+         let firstChar = pElement2.indexOf(word);
+            if ( firstChar != -1) {
+                 pElement.innerHTML = pElement2.slice(firstChar, word.length);
+                 let testSpan = document.createElement("span");
+                 testSpan.style.color = "green";
+                 testSpan.innerHTML = word;
+                 pElement.appendChild(testSpan);
+                 pElement.innerHTML = pElement2.slice(word.length + 1, pElement2.length);
+            }
+           
+    })
+
+    div.forEach((dElement) => {
+        dElement = dElement.textContent.toLowerCase();
+
+   })
+  
+})
+
+
+
+///////////////////////////////// day and night modes ///////////////////////////////////
+let section = document.querySelectorAll("section");
+let modeNight = document.querySelector(".modeNight");
+let modeDay = document.querySelector(".modeDay");
+let anchor = document.querySelectorAll("a");
+let foot = document.querySelectorAll(".foot");
+modeNight.addEventListener("click", () => {
+    main.style.color = "white";
+  
+    section.forEach((sect) => {
+        sect.style.backgroundColor = "black";
+        sect.style.color = "white";
+    })
+    main.children[0].style.color = "black";
+    section[0].style.backgroundColor = "transparent";
+    section[3].children[0].style.backgroundColor = "white";
+    section[3].children[1].style.backgroundColor = "black";
+    section[3].children[2].style.backgroundColor = "white";
+    footer.children[0].style.backgroundColor = "rgba(25, 58, 22, 0.9)";
+    foot.forEach((e) => e.style.color = "rgb(8, 247, 8)")
+    
+
+})
+
+modeDay.addEventListener("click", () => {
+    main.style.color = "black";
+    section.forEach((sect) => {
+        sect.style.backgroundColor = "white";
+        sect.style.color = "black";
+    })
+    section[0].style.backgroundColor = "transparent";
+    section[3].style.backgroundColor = "black";
+    section[3].children[0].style.backgroundColor = "black";
+    section[3].children[1].style.backgroundColor = "white";
+    section[3].children[2].style.backgroundColor = "black";
+    footer.children[0].style.backgroundColor = "rgba(10, 9, 9, 0.877)";
+    foot.forEach((e) => e.style.color = "green")
+    
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////the block of codes for the click events on the Team profile/////////////////////////// 
+let next = document.getElementById("next");
+let prev = document.getElementById("helpPrev");
+let box = document.querySelector(".box");
+let iteration = 0;
+// add a click event the prev button
+prev.addEventListener("click", (back) => {
+    iteration = iteration - 90;
+    if (iteration >= -360) {
+             back = iteration + "deg";
+    box.style.transform = "rotateY" + "(" + back + ")";
+    box.style.transition = "all 1s";
+    console.log(back)
+    console.log(box);
+    }
+    if (iteration < -360) { 
+        iteration = 0;
+        back = iteration + "deg";
+        box.style.transform = "rotateY" + "(" + back + ")";
+        box.style.transition = "unset";
+    }
+})
+
+next.addEventListener("click", (back) => {
+    iteration = iteration + 90;
+    if (iteration <= 360) {
+             back = iteration + "deg";
+    box.style.transform = "rotateY" + "(" + back + ")";
+    box.style.transition = "all 1s";
+    console.log(back)
+    console.log(box);
+    }
+    if (iteration > 360) { 
+        iteration = 0;
+        back = iteration + "deg";
+        box.style.transform = "rotateY" + "(" + back + ")";
+        box.style.transition = "unset";
+    }
+})
+//////////////////////////////////the block of codes for the click events on the Team profile/////////////////////////// 

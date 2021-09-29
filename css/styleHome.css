@@ -1,0 +1,2316 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+}
+
+html{
+    width: 100%;
+    height:100%;
+}
+
+body{ 
+    width: 100%;
+    height: 100%;
+    /* font-size: calc(16px + 6 * ((100vw-200px)/(1000px)));  */
+    font-size: min(max(4vw,16px), 22px);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+    position: absolute;
+    width: 100vw;
+    height : 100%;
+    background-image: url(../assets/images/technology-3385088_1920.jpg);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 2;
+    animation: bgslide 60s infinite linear 5s;
+    
+}
+
+ @keyframes bgslide {
+      0% {background-image: url(../assets/images/technology-3385088_1920.jpg);}
+      25% {background-image: url(../assets/images/technology-3385088_1920.jpg);}
+      50% {background-image: url(../assets/images/northern-lights-3273425_1920.jpg);}
+      65% {background-image: url(../assets/images/northern-lights-3273425_1920.jpg);}
+      75%{background-image: url(../assets/images/blue-2889381_1920.jpg);}
+      85%{background-image: url(../assets/images/blue-2889381_1920.jpg);}
+      100%{background-image: url(../assets/images/josh-riemer-flRN6KYpl1A-unsplash.jpg);}
+      115%{background-image: url(../assets/images/josh-riemer-flRN6KYpl1A-unsplash.jpg);}
+}
+
+
+
+
+
+
+
+
+/* ////////////////////////////  header styles //////////////////////////////// */
+
+header{
+    width:100vw;
+    height: 120px;
+    position: absolute;
+    top:0px;
+    /* right: max(16px,1.5vw); */
+    z-index: 3;
+}
+
+.bgcover {
+    background-color: rgba(0, 0, 0, 0.637);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height : calc(930px - 20vw);
+}
+
+
+.navContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    color: gray;
+    word-spacing: none;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+
+}
+
+.navContainer .item {
+    /* width: 50%;
+    height: 100%; */
+    flex : 1 1 20%;
+    width: 120px;
+    word-wrap: none;
+    padding: 35px 0px 0px 0px;
+    margin: 0px 15px;
+    font-size: min(max(16px,1.5vw), 18px);
+    
+     /* font-size : 1.5vw; */
+
+}
+
+.navLink {
+    color: rgb(172, 170, 170);
+}
+nav .item:nth-child(1) {
+    margin: 0px 20vw 10px 5vw;
+    padding: 30px 0px 0px 0px;
+    flex : 1 1 50%;
+    padding-top: 10px;
+    
+}
+
+
+
+nav .item:nth-child(1) a {
+    height: 100%;
+    width: 100%;
+    padding-inline: 7px;
+    padding-top: 10px;
+    background-color: rgba(234, 243, 234, 0.322);
+}
+
+nav .item:nth-child(1) a img {
+    height: max(90px,4.5vw);
+    width: max(159px,15vw);
+}
+
+
+nav .item:nth-child(3) {
+
+    margin-right: 0px;
+    
+}
+
+nav .item:nth-child(4) {
+    margin-left: 3px;
+    
+}
+
+.item:nth-child(5) {
+    height: 58px;
+    width: max(calc(2vw + 10%), 34px);
+    cursor: pointer;
+    
+}
+
+.navBar {
+    width: 40px;
+    height: 89%;
+    padding-bottom: 30px;
+    padding-top: 1px;
+    background-color: rgb(5, 29, 5);
+}
+
+
+
+
+nav div a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+nav:nth-child(1) a img {
+    width:170px;
+    height: 50px;
+}
+
+
+
+.bars {
+    background-color: green;
+    width: max(calc(2vw + 7%), 34px);
+    height: 5px;
+    margin: 4px 0px 3px 3px;
+    transform: rotate(0deg) translate(0px, 0px);
+    visibility: visible;
+    transition: all 0.5s;
+}
+.bars:nth-child(3) {
+    background-color: green;
+    transition: all 0.5s ease 0.1s;
+}
+
+
+
+/* these are the styles for the hover menu */
+
+nav:nth-child(1) > div:nth-child(2) > div {
+    position: absolute;
+    top: 58px;
+    width: 150px;
+    height: fit-content;
+    display: none;
+
+}
+
+nav:nth-child(1) div:nth-child(3) div {
+    position: absolute;
+    left: 880px;
+    top: 58px;
+    width: 150px;
+    display: none;
+    
+}
+
+nav:nth-child(1) div:nth-child(4) div {
+    position: absolute;
+    left: 1048px;
+    top: 58px;
+    width: 150px;
+    display : none;
+
+}
+
+
+
+
+/* the hover styles */
+
+nav:nth-child(1) > div:nth-child(2):hover > a,
+nav:nth-child(1) > div:nth-child(3):hover > a,
+nav:nth-child(1) > div:nth-child(4):hover > a{
+    box-shadow: 2px 2px 5px rgb(21, 175, 21); 
+}
+
+ 
+
+
+
+nav:nth-child(1) > div:nth-child(2):hover  > div,
+nav:nth-child(1) > div:nth-child(3):hover  > div {
+   display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid black;
+   transition: all 0.5s;
+   background-color: rgba(255, 255, 255, 0.836);
+   color: black;  
+   height: fit-content;
+   width: 150px;
+   position: absolute;
+} 
+
+.we_do {
+    padding-block: 10px;
+    padding-inline: 5px;
+}
+
+.we_do:hover {
+    background-color: green;
+}
+
+.constContainer {
+    display: none;
+}
+
+.we_do:nth-child(2):hover .constContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid rgba(83, 175, 29, 0.603);
+   transition: all 0.5s;
+   background-color: rgb(255, 255, 255);
+   color: black;  
+   height: fit-content;
+   width: 170px;
+   position: absolute; 
+   right: -110%;
+   top: 28%;
+   
+}
+
+
+.we_do:nth-child(2) > a > span {
+    font-size : 20px;
+}
+.const {
+    padding-inline: 10px;
+    padding-block : 10px;
+}
+.const a {
+    text-decoration: unset;
+    text-transform: capitalize;
+}
+
+.const:hover {
+    background-color: green;
+    text-decoration: unset;
+}
+
+
+
+
+
+
+
+
+/* //////////////// these are the styles for the navBar slide-in menu /////////////////*/
+
+.navBarToggle {
+    position: relative;
+    left: 30%;
+    top: -20px;
+    height: 50px;
+    padding: 17px 0px 0px 30px;
+    width: max(calc(2vw + 10%), 34px);
+    cursor: pointer;
+}
+.bar3toggle {
+    visibility: hidden;
+    transition: alls 0.1s ease;
+    
+}
+.bar1toggle {
+    transform: rotate(45deg) translate(4px, 25px);
+    height: 2px;
+    transition: all 1s 0.1s;
+}
+
+.bar2toggle {
+    transform: translate(-13px, 9px) rotate(135deg);
+    height: 2px;
+    transition: all 1s ease 0.1s;
+    
+}
+
+
+
+header .navSlide {
+    width: 350px;
+    height: 95vh;
+    position: absolute;
+    right: -300%;
+    background-color: white;
+   transition: all 2s;
+   overflow-y: auto;
+   overflow-x: hidden;
+   z-index: 2;  
+}
+.navSlide .navBar {
+    background-color: transparent;
+}
+
+header .navSlideContainer {
+    width: 340px;
+    height: 600px;
+    position: absolute;
+    left: 0px;
+    padding-right: 50px;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+   transition: all 2s;  
+}
+
+
+/* ////////////////////////////  styles for the slide menu /////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////////// start of drop menu ////////////////////////////////////////////*/
+header nav:nth-child(2) div{
+    display: block;
+    flex-basis: 50% 50%;
+    margin: 10px;
+    text-align: center;
+    line-height: 30px;
+    
+
+}
+
+
+header nav:nth-child(2) .menu1 a {
+    font-weight: lighter;
+}
+
+header nav:nth-child(2) div.login {
+       display: inline-block;
+       width: 56px;
+       margin-right: 50px;
+       font-weight: lighter;
+}
+
+
+header nav:nth-child(2) div.signUp {
+    display: inline-block;
+    width: 80px;
+    word-wrap: none;
+    font-weight: lighter;
+
+}
+
+header nav:nth-child(2) div.searchWrapper:after {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f00e";
+    position: absolute;
+    color: green;
+    top:140px;
+    right: max(100px,6vw);
+    
+}
+
+header nav:nth-child(2) div.searchWrapper input {
+    width: 230px;
+    height: 40px;
+    border: 1px solid green;
+    padding-left: 10px;
+    padding-right: 40px;
+    font-size: 18px;
+}
+
+
+header nav:nth-child(2) div.icons a {
+     color:  green;
+     margin: 10px;
+}
+
+header .navSlideToggle {
+    position: absolute;
+    right: -5px;
+    transition: all 0.8s;
+}
+
+.navSlideContainer .solution,
+.navSlideContainer .product,
+.navSlideContainer .contact {
+    display: none;
+}
+/*////////////////////////////////////////// end of drop down menu /////////////////////////////////////*/
+
+/* /////////////////////////////////// end of header styles  ///////////////////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////////// commencing main tag styles ////////////////////////////////////////////*/
+main {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+/*///////////////////////////// first section  ////////////////////////////////////////////*/
+
+main section.first{
+    height : calc((818px - 20vw));
+    width: 100%;
+    position: relative;
+    left: 0%; 
+    z-index: 2; 
+
+}
+.first h1 {
+    position: absolute;
+    color: rgb(172, 170, 170);
+    top: 35%;
+    font-size: 2.5em;
+    font-weight: lighter;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    padding-inline: 8vw;
+}
+
+.first h1 span {
+    color : rgb(0, 172, 0);
+}
+
+
+
+.first button {
+   position: absolute;
+   background-color: transparent;
+   border: 1px outset rgb(172, 170, 170);;
+   color: rgb(172, 170, 170);
+   font-size: 1.1em;
+   width: 300px;
+   cursor: pointer;
+   padding: 5px;
+   height: 70px;
+   font-weight: bolder;
+   box-shadow: 0px 2px 2px rgb(5, 26, 5);
+   z-index: 2;
+}
+
+.first button:hover{
+    background-color: rgb(3, 201, 3);
+    color: black;
+}
+
+.first button a {
+    color: unset;
+    text-decoration: none;
+}
+
+#btn1 {
+    top: 65%;
+    left: 10%;
+    background-color: rgba(60, 80, 21, 0.2);
+}
+
+#btn2 {
+    top: 65%;
+    left: 65%;
+}
+
+.first button#btn1:hover {
+    background-color: rgb(3, 201, 3);
+    color: black;
+}
+/*///////////////////////////// end first section ////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////////// end second section ////////////////////////////////////////////*/
+section.second {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    height : calc((1230px - 20vw));
+    height: fit-content;
+    padding-bottom: 70px;
+}
+
+
+section.second::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    top:-90px;
+    left: 35%;
+    height: 200px;
+    width: 400px;
+    clip-path: circle(50% at 50% 100%);
+}
+
+section.second::after{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(71, 70, 70);
+    top:90%;
+    left: 35%;
+    height: 200px;
+    width: 400px;
+    clip-path: circle(50% at 50% 100%);
+}
+
+
+
+.second h1 {
+    margin: 2%;
+    color: green;
+    font-size: min(50px,8vh);
+    position: relative;
+    left: 38vw;
+    
+}
+.services {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    height: 80%;
+    width: 80%;
+    margin: 10px 10%;
+    justify-content: space-around;
+}
+
+.one {
+    width: 30%;
+    font-size: max(19px, 1.5vw);
+    height: max(1090px - 30vw);
+    border: 1px solid gray;
+    box-shadow: 2px 5px 10px gray;
+    overflow: hidden;
+    line-height: min(calc(100px - 5vw), 40px);
+    padding-bottom: 50px;
+    
+}
+
+.one h3 {
+    color: green;
+    padding: 5px;
+}
+
+
+.one img {
+    width:150%;
+    height: 300px;
+    padding-right: 100px;
+    
+}
+.one p {
+    padding: 0px 7px;
+}
+.one p button {
+    margin: 5px 20px 40px;
+    width: 120px;
+    font-size: max(19px, 1.5vw);
+    height: 30px;
+    background-color: green;
+    border: white;
+}
+
+
+
+.one p button a {
+    color: white;
+    text-decoration: none;
+    width: 100px;
+    height: 30px;
+    padding-left: 5px;
+    background-color: green;
+}
+
+.one p button a span {
+    width: 35px;
+    height: 30px;
+    background-color: black;
+    padding: 0px 11.85px 6px;
+    margin-left: 24px;
+    margin-top: 0px;
+    float: right;
+}
+
+.one p button:hover{
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+    cursor: pointer;
+}
+
+.one p button:hover > a {
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+}
+.moreServices {
+    position: relative;
+    left:40%;
+    top: 71%;
+    margin: 70px 20px;
+    width: 210px;
+    font-size: 16px;
+    height: 60px;
+    background-color: green;
+    border: white;
+    padding:  7px 2px;
+    
+}
+
+.moreServices a {
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font-weight: lighter;
+    font-size: 1.5em;
+    padding-left: 3px;
+}
+
+.moreServices:hover{
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+    cursor: pointer;
+}
+
+.moreServices:hover > a {
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+}
+
+.moreServices a span {
+    width: 50px;
+    background-color: black;
+    margin-left: 7px;
+    height: 100%;
+    padding: 9px 18px 21px 18px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+/*///////////////////////////// end second section ////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////////// third section ////////////////////////////////////////////*/
+section.third  {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height : fit-content;
+    background-color: rgb(71, 70, 70);
+    border-top: 10px solid  rgba(0, 0, 0, 0.2);
+    padding: 10vw 7vw;
+}
+
+.third h1 {
+    color: rgb(7, 165, 7);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: max(50px,8vh);
+    display: block;
+    position: absolute;
+    top: 0%;
+    z-index: 1;
+    left: 42%;
+}
+.third .aboutWrap {
+    width: 50%;
+    order: 1;
+}
+.third p {
+    text-align: justify;
+    line-height: 1.5em;
+    width: 100%;
+    color: white;
+
+}
+
+.third .learnMore {
+    width: 210px;
+    font-size: 16px;
+    height: 60px;
+    background-color: green;
+    border: white;
+    order:2;
+    overflow: hidden;
+}
+
+.learnMore a {
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font-weight: lighter;
+    font-size: 1.5em;
+    display: flex;
+    
+}
+
+.learnMore a span:nth-child(2) {
+    width: 22%;
+    background-color: black;
+    margin-left: 7px;
+    height:100%;
+    padding: 9px 18px 21px 18px;
+
+}
+
+
+#more {
+    padding-left: 9px;
+    padding-top: 11px;
+    background-color: transparent;
+    width: 70%;
+    height: 100%;
+    margin-right: 25px;
+
+}
+
+
+
+.third .learnMore:hover, #more:hover{
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+    cursor: pointer;
+}
+
+.learnMore:hover > a {
+    background-color: black;
+    transition: background-color 0.5s;
+    color: green;
+}
+
+.third div.slideShow {
+    width: 36vw;
+    height: max(68vh, 400px);
+    border: 2px solid green;
+    overflow:hidden;
+    background-color: green;
+
+    
+}
+
+        .third iframe {
+            width: 36vw;
+            height: max(68vh, 400px);
+        }
+/*///////////////////////////// end third section ////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////////// fourth section ////////////////////////////////////////////*/
+    section.fourth {
+         position: relative;
+         width: 100%;
+         height : fit-content;
+         background-color: white;
+         
+
+
+     }
+
+     .fourth h1 {
+         text-align: center;
+         color: green;
+         font-size: max(min(40px, 4vw), 35px);
+         width: 100%;
+         padding-top: 60px;   
+     }
+
+     .fourthFlex {
+         display: flex;
+         flex-flow: row nowrap;
+         justify-content: space-between;
+         width: 100%;
+         height: 100%;
+     }
+
+     .portfolioContainer  {
+         width: 50vw;
+         height: fit-content;
+         line-height: 2em;
+    
+     }
+
+     .portfolioContainer p {
+         padding-top: 2vw;
+         padding-left: 5vw;
+         padding-bottom: 200px;
+     }
+
+     .lsideWrap  {
+        width:100%;
+        height: 100%;     
+     }
+
+
+     .lsideDisc {
+         padding-top: 50px;
+         padding-left: 40px;
+         display: grid;
+         grid: repeat(4, 1fr) / repeat(5, 1fr);
+         width: 40vw;
+         height: 100%;
+         background-color: rgba(9, 209, 9, 0.459);
+         background-image: linear-gradient(45deg, rgba(9, 209, 9, 0.759), rgba(3, 61, 3, 0.979) 45%, rgba(9, 209, 9, 0.859) 75%);
+         clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+     }
+
+     .lsideDisc .imgWrapper {
+         width: 100%;
+         height: 70%;
+     }
+
+     .lsideDisc img{
+         width: 100%;
+         height: 100%;
+         filter : grayscale(1);
+     }
+
+     .imgWrapper:nth-child(1) {
+         grid-column: 3/4;
+         grid-row: 1/2;
+     }
+
+     .imgWrapper:nth-child(2) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        filter: contrast(1);
+    }
+
+    .imgWrapper:nth-child(3) {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    .imgWrapper:nth-child(4) {
+        grid-column: 3/4;
+        grid-row: 4/5;
+        filter: contrast(5);
+    }
+
+    .imgWrapper:nth-child(5){
+        display: none;
+       
+    }
+
+    .imgWrapper:nth-child(6) {
+        grid-column: 4/5;
+        grid-row: 2/3;
+        filter: contrast(2);
+    }
+
+    .imgWrapper:nth-child(7) {
+        grid-column: 4/5;
+        grid-row: 3/4;
+    }
+
+/*///////////////////////////// end fourth section ////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////////// fifth section ////////////////////////////////////////////*/
+    section.fifth {
+        background-color: white;
+        width: 100%;
+        height: calc(950px - 20vw);
+        background-image: url(../assets/images/people-94196_1920.jpg);
+        background-size: 45% 100%;
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;  
+    }
+
+    section.fifth::before {
+        content: "";
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.822);
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+  
+
+    .fifth h1 {
+        color: rgba(41, 26, 26, 0.623);
+        height: fit-content;
+        font-size: min(100px,12vh);
+        width: min-content;
+        position: absolute;
+        border: 10px double rgba(7, 167, 28, 0.623);
+        right: 18vw;
+        top: 20%;
+        text-align: center;
+        z-index: 3;
+    }
+
+        
+    
+
+    .fifth .boxContainer {
+        width: 100%;
+        height: 98.5%;
+        background-size: 120% 85%;
+        perspective: 25000px;
+        font-size: 25px;
+        z-index: 2;
+        position: absolute;
+        line-height: 35px;
+        top:4px;
+    }
+
+     .box {
+        transform-style: preserve-3d;
+        width : 46vw;
+        height: 100%;
+        font-size: inherit;
+        
+    }
+    
+    .fifth .box:hover {
+        transform-style: preserve-3d;
+        width: 46vw;
+        height: 100%;
+        animation: picRotate 10s infinite linear;
+      
+        
+    }
+
+    .fifth .box:hover > .front,
+    .fifth .box:hover > .back,
+    .fifth .box:hover > .lside,
+    .fifth .box:hover > .rside {
+        border: 2px solid green;
+    }
+
+
+    @keyframes picRotate {
+        from {transform: rotateY(0deg);}
+         to {transform: rotateY(360deg);}
+    }
+
+
+    .box .front,
+    .box .back,
+    .box .lside,
+    .box .rside
+     {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image:linear-gradient(180deg, rgb(109, 105, 105), rgb(109, 209, 119) 30%, rgb(26, 26, 26) 70%);
+        transform-style: preserve-3d;
+        
+    }
+
+    .front {
+        transform : translateZ(23vw);
+        
+    }
+    .rside {
+        transform: rotateY(90deg) translateZ(23vw);
+    }
+    .lside {
+        transform: rotateY(-90deg) translateZ(23vw);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(23vw);
+    }
+
+
+
+    .imgHolder {
+         position: absolute;
+         overflow: hidden;
+         border: 1px solid black;
+         width: 80%;
+         height: 50%;
+         border-radius: 50%;
+         left: 15%;
+         top: 2%;
+         background-color: rgba(0, 128, 0,.5);
+    }
+    .subHolder {
+        width: 60%;
+        height: 79%;
+        position: absolute;
+        top:11%;
+        left: 20%;
+        overflow: hidden;
+        border: 5px solid rgb(185, 224, 185);
+        border-radius: 30%;
+    
+    }
+
+    .imgHolder img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    dl {
+        position: absolute;
+        width: 100%;
+        height: 45%;
+        background-color: white;
+        top: 55%;
+        color: black;
+    }
+
+    dt{
+        position: absolute;
+        padding-top: 40px;
+        left:10%;
+        width: 80%;
+        color: green;
+        font-size: inherit;
+    }
+    dd {
+        position: absolute;
+        left:20%;
+        top: 20%;
+        width: 78%;
+        padding-top: 20px;
+        font-size: inherit;
+    }
+
+
+/*///////////////////////////// end fifth section ////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+   /*///////////////////////////// prev and next button important styles. Self created 😅  ////////////////////////*/
+    #prev {
+        position: absolute;
+        left: 7%;
+        top: 47%;
+        opacity: 0.6;
+        width: 50px;
+        height: 70px;
+        font-size: 3em;
+        cursor: pointer;
+        padding-bottom: 20px;
+        z-index: 2;
+        color: rgb(71, 69, 69);
+        background-color: rgba(21, 255, 37, 0.671);
+        border-radius: 50%;
+        background-size: 100px;
+    }
+
+    #helpPrev {
+        position: absolute;
+        left: 7%;
+        top: 47%;
+        opacity: 0;
+        width: 50px;
+        height: 70px;
+        font-size: 3em;
+        cursor: pointer;
+        padding-bottom: 20px;
+        z-index: 3;
+        color: rgb(71, 69, 69);
+        background-color: rgba(21, 255, 37, 0.671);
+        border-radius: 50%;
+        background-size: 100px;
+    }
+
+    #helpPrev:hover ~ #next {
+        opacity: 0;
+    }
+    
+    #next {
+        position: absolute;
+        left: 31%;
+        top: 47%;
+        opacity: 0.6;
+        width: 50px;
+        height: 70px;
+        font-size: 3em;
+        cursor: pointer;
+        z-index: 2;
+        color: rgb(71, 69, 69);
+        background-color: rgba(21, 255, 37, 0.671);
+        border-radius: 50%;
+        background-size: 100px;
+    }
+   #next:hover  ~ #prev {
+      opacity: 0;
+   }
+
+   #prev:hover  ~ #next {
+    opacity: 0;
+
+ }
+    .boxContainer:hover ~ #prev, 
+    .boxContainer:hover ~ #next {
+    opacity: 0.4;
+    background-color: rgba(1, 109, 8, 0.671);
+    border-radius: 50%;
+    background-size: 100px;
+    color: rgb(71, 69, 69);
+    font-size: 3em;
+    width: 50px;
+    height: 70px;
+    text-align: center;
+ }
+
+ #prev span {
+     font-weight: bolder; 
+     position: absolute;
+     left: 2px;
+     top:-12px; 
+ }
+    
+ #next span {
+    font-weight: bolder; 
+    position: absolute;
+    right: 4px;
+    top:-12px; 
+}
+/*///////////////////////////// end of prev and next button important styles. Self created 😅  ////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////////// more section ////////////////////////////////////////////*/
+section.more {
+    position: relative;
+    padding-top: 1vw;
+    width: 100%;
+    height : calc((850px - 20vw));
+    background-image: linear-gradient(45deg, #407a48, #1d5e27 30%, #192e1c 60%)
+ }
+
+ 
+ .more p {
+     text-align: center;
+     height: 50px;
+     margin-top: 90px;
+     color : white;
+     margin-bottom: 60px;
+ }
+
+ .more p span {
+     color : rgb(1, 216, 1);
+ }
+
+ .moreImages {
+     width: 100%;
+     height: 60%;
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: space-between;
+     padding-inline: 20px;
+ }
+
+ .moreWrap {
+     width: 20%;
+     height: 75%;
+     border : 3px solid rgb(1, 216, 1);
+}
+.moreWrap a {
+    position: relative;
+    color: rgb(1, 216, 1);
+    background-color: rgba(0, 0, 0, 0.589);
+    border: 2px solid rgb(1, 216, 1);
+    bottom: 35px;
+    width: 80%;
+    height: 30px;
+}
+
+
+.moreWrap a:hover {
+    background-color: rgba(0, 0, 0, 0.904);
+}
+
+.moreWrap img {
+    width: 100%;
+    height: 100%;
+}
+/*///////////////////////////// end more section ////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////// scroll up button styles ////////////////////////////// */
+.scrollUpBtn {
+    width: 45px;
+    height : 42px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 5;
+    bottom: 10%;
+    right: 5%;
+    padding-left: 7px;
+    background-color: rgba(0, 128, 0,0.5);
+    cursor: pointer;
+    
+    
+}
+
+.scrollUpBtn:hover {
+    background-color: rgb(3, 192, 3);
+}
+
+
+.scrollUpBtn::after {
+    content: "";
+    background-color: black;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: fixed;
+    width: 30px;
+    height: 34px;
+}
+
+
+
+footer {
+    position: relative;
+    width: 100%;
+    height : fit-content;
+    background-image: url(../assets/images/light-bulbs-3489395_640.jpg);
+    background-size: cover;
+
+}
+
+footer .footContainer {
+    width:100%;
+    padding-top: 5vw;
+    height: calc(880px - 20vw);
+     background-color: rgba(10, 9, 9, 0.877);
+     display: flex;
+     flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+.footContainer > div {
+      width: fit-content;
+      height: fit-content;
+      padding: 20px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-around;
+}
+
+.footContainer > div > div {
+    width: 100%;
+    height : 150px;
+    align-self: stretch;
+    color: green;
+
+}
+
+.footContainer img {
+    width: 17vw;
+    height: 20vh;
+}
+
+.footContainer > div:nth-child(1) > div:nth-child(2) {
+    padding-top: 20px;
+    height: 10vh;
+}
+
+.footContainer > div:nth-child(1) > div small {
+    font-size: 13px;
+}
+
+.footContainer > div:nth-child(1) > div small a {
+    color: green;
+    text-decoration: none;
+}
+
+.footContainer > div > div:nth-child(2) a {
+    color: green;
+    padding-right: 20px;
+}
+
+.footContainer > div:nth-child(2)  {
+    text-transform: capitalize;
+    justify-content: space-around;
+}
+
+.footContainer > div  div {
+   text-align: center;
+   height: fit-content;
+   padding-top: 3vh;
+  
+   
+
+}
+
+.footContainer > div:nth-child(2)  div:nth-child(1) {
+     font-size: 25px;
+     text-decoration: underline;
+     padding-top: 5vh;
+     margin-bottom: 15px;
+}
+
+
+
+.footContainer > div:nth-child(2) div a { 
+    color: green;
+    text-decoration: none;
+    text-transform: capitalize;
+    
+}
+
+
+
+
+
+
+.footContainer > div:nth-child(3)  div {
+    text-align: center;
+    height: 8vh;
+    padding-top: 3vh;
+   
+    
+ 
+ }
+ 
+ .footContainer > div:nth-child(3)  div:nth-child(1) {
+      font-size: 25px;
+      text-decoration: underline;
+      padding-top: 5vh;
+      margin-bottom: 15px;
+ }
+ 
+ 
+ 
+ .footContainer > div:nth-child(3) div a { 
+     color: green;
+     text-decoration: none;
+     text-transform: capitalize;
+     
+ }
+
+
+
+
+
+ .footContainer > div:nth-child(4) {
+     height: fit-content;
+     align-items: center;
+     padding-top: 20px;
+     text-align: center;
+     
+ }
+
+
+
+
+
+ .footContainer > div:nth-child(4)  > div:nth-child(1) {
+    text-align: center;
+    padding-left: 15vh;
+    width: fit-content;
+    text-decoration: underline;
+    padding-bottom: 10px;
+    
+ }
+
+ .footContainer > div:nth-child(4)  > div:nth-child(3) {
+     margin-top: 10px;
+ }
+ .footContainer > div:nth-child(4) p {
+     font-size : small;
+     text-align: justify;
+     line-height: 20px;
+ }
+ .footContainer > div:nth-child(4)  div:nth-child(1) {
+      font-size: 25px;
+      text-decoration: underline;
+      height: unset;
+ }
+
+ .footContainer > div:nth-child(4)  div:nth-child(2) {
+    height: fit-content;
+ } 
+ 
+ 
+ 
+ .footContainer > div:nth-child(4) div a { 
+     color: green;
+     text-decoration: none;
+     text-transform: capitalize;
+     
+ }
+ 
+
+/*/////////////////// responsive design /////////////////////////*/
+
+@media screen and (max-width:838px) {
+    section.fifth {
+        display: flex;
+        flex-flow : column nowrap;
+        width: 100%;
+    }
+
+    .fifth h1, .fifth .boxContainer {
+        position: unset;
+    }
+
+    .fifth h1 {
+        width: 100%;
+        padding-top: 1vw;
+        font-size: min(60px,12vw);
+    }
+
+    .fifth .boxContainer {
+        width: 100%;
+        height: 100%;
+    }
+
+    .box {
+        transform-style: preserve-3d;
+        position: absolute;
+        /* width: 21em; */
+        width : 100%;
+        /* height: 21.5em; */
+        height: 100%;
+        left: 0px;
+        
+    }
+    
+    .fifth .box:hover {
+        transform-style: preserve-3d;
+        width: 100%;
+        height: 100%;
+        animation:unset;
+      
+        
+    }
+
+    .fifth .box:hover > .front,
+    .fifth .box:hover > .back,
+    .fifth .box:hover > .lside,
+    .fifth .box:hover > .rside {
+        border: 2px solid green;
+    }
+
+
+
+    .box .front,
+    .box .back,
+    .box .lside,
+    .box .rside
+     {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image:linear-gradient(180deg, rgb(109, 105, 105), rgb(109, 209, 119) 30%, rgb(26, 26, 26) 70%);
+        transform-style: preserve-3d;
+        
+    }
+
+    .front {
+        transform : translateZ(23vw);
+        
+    }
+    .rside {
+        transform: rotateY(90deg) translateZ(23vw);
+    }
+    .lside {
+        transform: rotateY(-90deg) translateZ(23vw);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(23vw);
+    }
+
+   
+
+    #prev {left: 30vw;}
+
+    #next {left : 60vw;}
+
+    #helpPrev {left:30vw}
+
+}
+
+@media screen and (max-width: 1136px) {
+    .moreWrap:nth-child(1) a{
+         bottom: 60px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+
+    .navContainer .item {
+        width: 160px;
+    }
+    .navContainer .item:nth-child(1) {
+        margin: 0px 2vw 10px 3vw;
+        flex : 1 1 50%;
+        padding-top: 10px;
+    }
+
+    .navContainer .item:nth-child(2) {
+        margin: 0px;
+    }
+
+    header .navSlide {
+        width: 300px;
+        height: 570px;
+        padding-right: 40px;
+    }
+   .navSlideContainer {
+       width: 100%;
+       height: 100vh;
+   }
+
+    header nav:nth-child(2) div.searchWrapper:after {
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900; 
+        content: "\f00e";
+        position: absolute;
+        color: green;
+        top: 140px;
+        right: max(100px,6vw);
+        
+    }
+
+
+
+    .first h1 {
+        position: absolute;
+        color: rgb(172, 170, 170);
+        top: 35%;
+        font-size: 2.5em;
+        font-weight: lighter;
+        width: 100%;
+        z-index: 2;
+        text-align: center;
+        padding-inline: 8vw;
+    }
+    
+#btn1 {
+    top: 65%;
+    left: 13%;
+    background-color: rgba(60, 80, 21, 0.2);
+    width: 35%;
+}
+
+#btn2 {
+    top: 65%;
+    left: 56%;
+    width: 35%;
+
+}
+
+
+.second h1 {
+    margin: 2%;
+    color: green;
+    font-size: max(50px,8vh);
+    position: relative;
+    left: 32%;
+}
+
+
+
+section.second::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    left: 30%;
+    height: 200px;
+    width: min(calc(34vw + 100px), 400px);
+    clip-path: circle(50% at 50% 100%);
+}
+
+section.second::after{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 95%;
+    background-color: rgb(71, 70, 70);;
+    left: 35%;
+    height: min(20vw, 150px);
+    width: min(35vw, 290px);
+    clip-path: circle(50% at 50% 100%);
+}
+
+
+.services {
+    justify-content: space-between;
+}
+
+.services .one {
+    width: 45%;
+    line-height: 30px;
+    font-size: max(19px, 1.5vw);
+    border: 1px solid gray;
+    box-shadow: 2px 5px 10px gray; 
+    height: fit-content;  
+    
+}
+
+.services .c { 
+     position: relative;
+     margin-top: 20px;
+     width: 100%;
+     height: fit-content;
+}
+
+
+
+.moreServices {
+    left: 35%;
+}
+
+.third h1 {
+    font-size: max(40px,6vh);
+    left:40%;
+} 
+
+section.more {
+    height : calc((1000px - 20vw));
+}
+
+.moreImages {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-between;
+    padding-inline: 20px;
+}
+
+.moreWrap {
+    width : 45vw;
+    height: 50%;
+}
+
+.moreWrap:nth-child(1) a{
+    bottom: 35px;
+}
+
+
+}
+
+@media screen and (max-width:910px) {
+        
+        footer .footContainer {
+            justify-content: center;
+            align-items: center;
+            flex-flow : column;
+            height:  fit-content;
+        }
+
+
+        .footContainer div {
+            width: 350px;
+            text-align: center;
+        }
+
+
+        .footContainer > div:nth-child(1) {
+            order: 1;
+        } 
+
+        .footContainer img {
+            width: 30vw;
+            height: 20vh;
+        }
+}
+
+
+@media screen and (max-width:768px){
+    .nav:nth-child(2) {
+        justify-content: space-between;
+    }
+
+    .item:nth-child(2),
+    .item:nth-child(3),
+    .item:nth-child(4) {
+        display: none;
+    }
+
+    
+
+     .navBar  {
+        margin-left: 15vw;
+     } 
+
+    
+    
+     .navSlideContainer .solution,
+     .navSlideContainer .product,
+     .navSlideContainer .contact {
+         display: block;
+         position: relative;
+     }
+     .navSlideContainer .solution > div ,
+     .navSlideContainer .product > div,
+     .navSlideContainer .contact > div {
+         display: none;
+         width: 100%;
+     }
+      
+     .navSlideContainer .solution:hover {
+         background-color: mintcream;
+     }
+
+     .navSlideContainer .solution:hover > div {
+         display: flex;
+         flex-flow : column nowrap;
+         background-color: mintcream;
+         width: 150px;
+         border-block : 1px solid green;
+         left : 15%;
+         /* .top: 38%; */
+         position: fixed;
+     }
+
+
+     .navSlideContainer .product:hover {
+        background-color: mintcream;
+    }
+
+    .navSlideContainer .product:hover > div {
+        display: flex;
+        flex-flow : column nowrap;
+        background-color: mintcream;
+        width: 150px;
+        border-block : 1px solid green;
+        right : 40vw;
+        top: 44.2vh;
+        position: fixed;
+    }
+/* 
+     nav:nth-child(2) .product  > div,
+     nav:nth-child(2) .solution  > div {
+         position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        border: 1px solid black;
+        transition: all 0.5s;
+        background: rgba(255, 255, 255, 0.836);
+        color: green;  
+}  */
+
+      .link {
+           color : black;
+           font-weight: lighter;
+       }
+    .bgcover {
+        height: 90%;
+    }
+   section.first #btn1 {
+       left: 7%;
+       width: 40%;
+   }
+
+   
+   section.first #btn2 {
+    left: 50%;
+    width: 40%;
+}
+
+section.second h1 {
+    left: 25%;
+    top: 1%;
+}
+
+section.second::before {
+    left: 27%;
+}
+       
+section.second::after{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 97%;
+    background-color: rgb(71, 70, 70);;
+    left: 35%;
+    height: min(25vw, 130px);
+    width: min(35vw, 290px);
+    clip-path: circle(50% at 50% 100%);
+}
+   
+      section .services .one {
+        width: 100%;
+        margin-bottom: 20px;
+        line-height: 30px;
+        font-size: max(19px, 1.5vw);
+        border: 1px solid gray;
+        box-shadow: 2px 5px 10px gray; 
+        height: fit-content;  
+        
+    }
+  
+   
+    section.more {
+        position: relative;
+        padding-top: 1vw;
+        width: 100%;
+        height : calc((1600px - 20vw));
+        background-image: linear-gradient(45deg, #407a48, #1d5e27 30%, #192e1c 60%)
+     }
+
+     section.more P {
+       padding-inline: 10px;
+     }
+
+    .moreImages {
+        height: 50%;
+    }
+    .moreWrap {
+        width: 90%;
+        height: 40%;
+        border : 3px solid rgb(1, 216, 1);
+    }
+
+    .moreServices {
+        left: 29%;
+    }
+
+
+    section.third {
+        display: flex;
+        flex-flow : column nowrap;
+        height: fit-content;
+        padding-inline: auto;
+        margin-inline: auto;
+    }
+    section.third > .aboutWrap,
+    section.third > .slideShow {
+        width: 83vw;
+    }
+
+    .third iframe {
+        width: 83vw;
+        height: max(68vh, 400px);
+    }
+  
+    
+    /* .slides {
+        position: absolute;
+        display: flex;
+        width: 9999px;
+        height: 68vh;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        left : 0.5vw;
+        display: block;
+        animation: slide 25s infinite;
+    }
+
+    @keyframes slide {
+       0% { left:0.5vw;}
+       10%{left:-82.5vw;}
+       20%{left:-163vw;}
+       30% {left: -243.5vw;}
+       40% {left: -323vw;}
+       50% {left: -403.5vw;}
+       60% {left: -484vw;}
+       70% {left: -564.5vw;}
+       80% {left: -645vw}
+       90% {left : -725.5vw}
+       100% {left: -806vw}
+       100.1% {left: 0.5vw; display: none;}
+    }
+
+  .third   img {
+        width: 82vw;
+        height: max(68vh, 400px);
+    } */
+
+    section.third > .slideShow {
+        margin-bottom: 20px;
+    }
+    
+
+    section.fourth {
+        height: fit-content;
+        background-image: linear-gradient(45deg, rgba(9, 209, 9, 0.759), rgba(6, 97, 6, 0.979) 45%, rgba(9, 209, 9, 0.859) 75%);
+          
+    }
+
+    .fourth::after {
+        content: "";
+        bottom: 0px;
+        width: 100%;
+        height: 300px;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.404);
+    }
+
+    .fourth h1 {
+        text-align: center;
+        color: green;
+        font-size: max(min(40px, 4vw), 35px);
+        width: 100%;
+        padding-top: 60px;   
+    }
+
+    .fourthFlex {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    
+    }
+
+    .portfolioContainer  {
+        width: 100%;
+        height: 100%;
+        line-height: 2em;
+        background-color: white;
+        padding-bottom: 20px;
+   
+    }
+
+    .portfolioContainer p {
+        padding-top: 2vw;
+        padding-left: 5vw;
+        padding-bottom: 100px;
+    }
+    .fourthFlex .lsideWrap  {
+        width: 1000px;
+       height: 300px; 
+       overflow: hidden; 
+        background-color: green;
+    }
+
+
+   .fourth .fourthFlex .lsideDisc {
+       position: relative;
+        grid-template-rows: unset;
+        grid-template-columns: unset;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 1500px;
+        height: 300px;
+        background-color:transparent;
+        background-image: unset;
+        clip-path: unset;
+        animation: portfolioSlide 30s infinite linear;
+        
+    }
+
+    @keyframes portfolioSlide {
+        0%{
+            left: 300px;
+        }
+
+        100%{
+            left: -780px;
+        }
+        101% {
+            left: 250px;
+        }
+    }
+ 
+    .lsideDisc .imgWrapper {
+        width: 100px; 
+        height: 100px; 
+        filter: contrast(2); 
+        display: unset;
+    }
+
+    .lsideDisc .imgWrapper:nth-child(3) {
+        width: 100px; 
+        height: 100px; 
+        filter: contrast(1); 
+    }
+
+    .lsideDisc .imgWrapper:nth-child(4) {
+        width: 100px; 
+        height: 100px; 
+        filter: contrast(5); 
+    }
+   
+    .imgWrapper:nth-child(8) {
+        height: 200px;
+        width: 100px;
+    }
+
+
+
+    .imgHolder {
+        position: absolute;
+        overflow: hidden;
+        border: 1px solid black;
+        width: 80%;
+        height: 50%;
+        border-radius: 50%;
+        left: 15%;
+        top: 2%;
+        background-color: rgba(0, 128, 0,.5);
+   }
+   .subHolder {
+       width: 60%;
+       height: 79%;
+       position: absolute;
+       top:11%;
+       left: 18%;
+       overflow: hidden;
+       border: 5px solid rgb(185, 224, 185);
+       border-radius: 30%;
+   
+   }
+
+   section.fifth {
+       padding-top: 100px;
+       background-image: unset;
+       clip-path: polygon(0% 12%, 50% 0%, 100% 12%, 100% 100%, 0% 100%);
+       height: calc(1010px - 20vw);
+   }
+
+    .fifth dl {
+        position: absolute;
+        width: 100%;
+        height: calc(60% - 9vw);
+        background-color: white;
+        top: 55%;
+        color: black;
+    }
+
+
+    .footContainer > div:nth-child(1) > div:nth-child(1) img {
+        width: 180px;
+        height: 100px;
+    }
+
+    .footContainer > div:nth-child(4){
+        width: 45vw;
+        padding: unset;
+    }
+
+    
+    .footContainer > div:nth-child(4) > div:nth-child(1){
+        width: 300px;
+        padding-left: unset;
+        text-align: center;
+        align-self: unset;
+    }
+     
+}
+
+@media screen and (max-width: 439px) {
+    .navBar  {
+        margin-left: 10vw;
+     } 
+
+    section.second h1 {
+        left: 10%;
+        width: fit-content;
+    }
+
+    section.second::after {
+        display: none;
+    }
+    
+     section.third h1 {
+         left: 26%;
+         padding-top: 50px;
+     }
+     .third .slideShow {
+         margin-top: 120px;
+     }
+
+     .moreServices {
+        left: 10%;
+        width: 50%;
+        display: flex;
+    }
+    
+    .fifth dl {
+        position: absolute;
+        width: 100%;
+        height: calc(60% - 9vw);
+        background-color: white;
+        top: 55%;
+        color: black;
+    }
+
+    .more p {
+        padding-top: 10px;
+    }
+
+    footer {
+        height: 1700px;
+        
+    }
+
+    footer .footContainer {
+        height: 1700px;
+        justify-content: start;
+    }
+
+    .footContainer > div:nth-child(1) > div:nth-child(1) img {
+        width: 180px;
+        height: 100px;
+    }
+
+    .footContainer > div:nth-child(4){
+        width: 180px;
+    }
+
+    
+    .footContainer > div:nth-child(4) > div:nth-child(1){
+        width: 200px;
+        text-align: start;
+        padding-left: 25px;
+    }
+
+
+
+     
+}
+
+@media screen and (max-width : 230px) {
+
+    header nav .item:nth-child(1) {
+        padding-right: 0px;
+        margin-right: 0px;
+        width: 100px;
+    }
+
+    section.second img { 
+        width: 200%;
+    }
+
+    section.second::after {
+        top: 98%;
+        height: 85px;
+        width: 100px;
+    }
+    section.third h1 {
+        left: 10%;
+    }
+
+    section.third .slideShow {
+        margin-top: 150px;
+    }
+   .moreServices {
+       left: 0%;
+       width: 80%;
+       display: flex;
+   }
+
+   .moreServices a span {
+       padding-left: 3px;
+       padding-right: 3px;
+       width: 20px;
+   }
+
+   section.more {
+       padding-bottom: 50px;
+   }
+
+    .more p {
+        padding-top: 10px;
+    }
+}
